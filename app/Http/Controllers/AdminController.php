@@ -8,6 +8,7 @@ use App\Models\LaporanLog; // Pastikan Model ini ada (sesuai langkah sebelumnya)
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
+use App\Models\User;
 
 class AdminController extends Controller
 {
@@ -80,5 +81,25 @@ class AdminController extends Controller
 
         // 2. Kembali dengan pesan sukses
         return redirect()->back()->with('success', 'Status laporan diperbarui & riwayat tercatat!');
+    }
+
+    // HALAMAN DAFTAR WARGA
+    public function warga()
+    {
+        // Ambil user yang role-nya 'warga', urutkan dari yang terbaru
+        $wargas = User::where('role', 'warga')->latest()->paginate(10);
+
+        return view('admin.warga', compact('wargas'));
+    }
+
+    // HAPUS AKUN WARGA
+    public function destroyWarga($id)
+    {
+        $user = User::where('role', 'warga')->findOrFail($id);
+
+        // Hapus user (Laporan & Review terkait akan ikut terhapus jika sudah di-set cascade di database)
+        $user->delete();
+
+        return back()->with('success', 'Akun warga berhasil dihapus.');
     }
 }

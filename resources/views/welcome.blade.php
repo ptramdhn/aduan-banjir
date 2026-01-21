@@ -25,10 +25,10 @@
 
     <nav class="fixed w-full z-50 bg-white/90 backdrop-blur-md border-b border-slate-100 transition-all duration-300">
         <div class="container mx-auto px-4 h-20 flex justify-between items-center">
-            <div class="flex items-center gap-2">
-                <div class="w-10 h-10 bg-blue-600 rounded-xl flex items-center justify-center text-white shadow-lg shadow-blue-200">
-                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path></svg>
-                </div>
+            <div class="flex items-center gap-3">
+                {{-- Pastikan file 'logo-jaya-raya.png' ada di folder public/images --}}
+                <img src="{{ asset('storage/images/Jaya Raya.png') }}" alt="Logo Jaya Raya" class="h-12 w-auto object-contain">
+                
                 <span class="text-xl font-bold tracking-tight text-slate-900">Siaga<span class="text-blue-600">Banjir</span></span>
             </div>
 
@@ -57,49 +57,67 @@
         </div>
     </nav>
 
-    <section class="pt-32 pb-20 bg-slate-50 overflow-hidden relative">
-        <div class="absolute top-0 right-0 -mt-20 -mr-20 w-96 h-96 bg-blue-100 rounded-full blur-3xl opacity-50"></div>
-        <div class="absolute bottom-0 left-0 -mb-20 -ml-20 w-96 h-96 bg-indigo-100 rounded-full blur-3xl opacity-50"></div>
+    <section class="relative pt-32 pb-24 min-h-[650px] flex items-center overflow-hidden">
+        
+        <div class="absolute inset-0 z-0">
+            <img src="{{ asset('storage/images/kantor.jpeg') }}" alt="Kantor Lurah" class="w-full h-full object-cover">
+            <div class="absolute inset-0 bg-slate-900/80"></div>
+            <div class="absolute inset-0 bg-gradient-to-t from-slate-900 via-transparent to-transparent"></div>
+        </div>
 
-        <div class="container mx-auto px-4 relative z-10 text-center max-w-4xl">
-            <span class="inline-block py-1 px-3 rounded-full bg-blue-100 text-blue-700 text-xs font-bold tracking-wide mb-6">
-                🚀 SISTEM PELAPORAN TERINTEGRASI
+        <div class="container mx-auto px-4 relative z-10 text-center max-w-5xl">
+            
+            {{-- Badge --}}
+            <span class="inline-block py-1.5 px-4 rounded-full bg-blue-500/20 border border-blue-400/30 text-blue-200 text-xs font-bold tracking-widest mb-6 backdrop-blur-sm shadow-sm">
+                 🚀 SISTEM PELAPORAN TERINTEGRASI
             </span>
-            <h1 class="text-4xl md:text-6xl font-bold text-slate-900 leading-tight mb-6">
+
+            {{-- Heading --}}
+            <h1 class="text-4xl md:text-6xl font-bold text-white leading-tight mb-6 drop-shadow-lg">
                 Bantu Lingkunganmu,<br>
-                <span class="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-indigo-600">Lapor Banjir Cepat & Tepat.</span>
+                <span class="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-cyan-300">Lapor Banjir Cepat & Tepat.</span>
             </h1>
-            <p class="text-lg text-slate-600 mb-10 max-w-2xl mx-auto leading-relaxed">
+
+            {{-- Deskripsi --}}
+            <p class="text-lg md:text-xl text-slate-200 mb-10 max-w-2xl mx-auto leading-relaxed drop-shadow-md">
                 Platform resmi kelurahan untuk memantau dan menindaklanjuti laporan banjir secara real-time. Laporkan genangan air di sekitarmu agar bantuan segera datang.
             </p>
             
-            <div class="flex flex-col sm:flex-row gap-4 justify-center">
+            {{-- Tombol Aksi --}}
+            <div class="flex flex-col sm:flex-row gap-4 justify-center items-center">
                 @auth
-                    <a href="{{ route('warga.dashboard') }}" class="bg-blue-600 text-white text-lg font-bold py-4 px-8 rounded-full shadow-xl hover:shadow-2xl hover:bg-blue-700 transition transform hover:-translate-y-1">
+                    <a href="{{ route('warga.dashboard') }}" class="bg-blue-600 border border-blue-500 text-white text-lg font-bold py-4 px-8 rounded-full shadow-lg hover:shadow-blue-500/50 hover:bg-blue-700 transition transform hover:-translate-y-1">
                         Buat Laporan Sekarang
                     </a>
                 @else
-                    <a href="{{ route('register') }}" class="bg-blue-600 text-white text-lg font-bold py-4 px-8 rounded-full shadow-xl hover:shadow-2xl hover:bg-blue-700 transition transform hover:-translate-y-1">
+                    <a href="{{ route('register') }}" class="bg-blue-600 border border-blue-500 text-white text-lg font-bold py-4 px-8 rounded-full shadow-lg hover:shadow-blue-500/50 hover:bg-blue-700 transition transform hover:-translate-y-1">
                         Daftar Akun Warga
                     </a>
-                    <a href="{{ route('login') }}" class="bg-white text-slate-700 border border-slate-200 text-lg font-bold py-4 px-8 rounded-full hover:bg-slate-50 transition">
+                    <a href="{{ route('login') }}" class="bg-white/10 backdrop-blur-md border border-white/20 text-white text-lg font-bold py-4 px-8 rounded-full hover:bg-white/20 transition shadow-lg">
                         Masuk Akun
                     </a>
                 @endauth
             </div>
 
-            <div class="mt-12 flex justify-center gap-8 text-slate-500 text-sm">
-                <div class="flex items-center gap-2">
-                    <svg class="w-5 h-5 text-green-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
-                    <span>Gratis 100%</span>
+            {{-- Fitur --}}
+            <div class="mt-16 pt-8 border-t border-white/10 grid grid-cols-1 md:grid-cols-3 gap-6 text-slate-300 text-sm max-w-3xl mx-auto">
+                <div class="flex items-center justify-center gap-2">
+                    <div class="p-2 bg-green-500/20 rounded-full text-green-400">
+                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                    </div>
+                    <span class="font-medium">Gratis 100%</span>
                 </div>
-                <div class="flex items-center gap-2">
-                    <svg class="w-5 h-5 text-green-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
-                    <span>Respon Cepat</span>
+                <div class="flex items-center justify-center gap-2">
+                    <div class="p-2 bg-green-500/20 rounded-full text-green-400">
+                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                    </div>
+                    <span class="font-medium">Respon Cepat</span>
                 </div>
-                <div class="flex items-center gap-2">
-                    <svg class="w-5 h-5 text-green-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path></svg>
-                    <span>Lokasi Akurat</span>
+                <div class="flex items-center justify-center gap-2">
+                    <div class="p-2 bg-green-500/20 rounded-full text-green-400">
+                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path></svg>
+                    </div>
+                    <span class="font-medium">Lokasi Akurat</span>
                 </div>
             </div>
         </div>
@@ -235,19 +253,28 @@
         </div>
     </section>
 
-    <footer class="bg-slate-900 text-slate-300 py-12">
+    <footer class="bg-slate-900 text-slate-300 py-12 border-t border-slate-800">
         <div class="container mx-auto px-4 text-center">
-            <div class="flex items-center justify-center gap-2 mb-6">
-                 <div class="w-8 h-8 bg-blue-600 rounded-lg flex items-center justify-center text-white">
-                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path></svg>
-                </div>
-                <span class="text-xl font-bold text-white">SiagaBanjir</span>
+            
+            {{-- Logo & Brand --}}
+            <div class="flex items-center justify-center gap-3 mb-6">
+                <img src="{{ asset('storage/images/Jaya Raya.png') }}" alt="Logo Jaya Raya" class="h-10 w-auto object-contain"> 
+                
+                <span class="text-xl font-bold text-white tracking-tight">Siaga<span class="text-blue-500">Banjir</span></span>
             </div>
-            <p class="text-sm mb-6">&copy; {{ date('Y') }} Sistem Pelaporan Banjir Kelurahan. Dilindungi Hak Cipta.</p>
-            <div class="flex justify-center gap-6 text-sm font-medium">
-                <a href="#" class="hover:text-white transition">Kebijakan Privasi</a>
-                <a href="#" class="hover:text-white transition">Syarat & Ketentuan</a>
-                <a href="#" class="hover:text-white transition">Hubungi Kami</a>
+
+            {{-- Copyright --}}
+            <p class="text-slate-500 text-sm mb-8 max-w-md mx-auto">
+                Sistem resmi pelaporan dan pemantauan banjir lingkungan kelurahan.
+                <br>
+                &copy; {{ date('Y') }} Pemerintah Provinsi DKI Jakarta.
+            </p>
+
+            {{-- Links --}}
+            <div class="flex justify-center gap-8 text-sm font-medium text-slate-400">
+                <a href="#" class="hover:text-white transition duration-300">Kebijakan Privasi</a>
+                <a href="#" class="hover:text-white transition duration-300">Syarat & Ketentuan</a>
+                <a href="#" class="hover:text-white transition duration-300">Hubungi Kami</a>
             </div>
         </div>
     </footer>

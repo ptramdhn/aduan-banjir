@@ -119,4 +119,13 @@ class LurahController extends Controller
 
         return back()->with('success', 'Akun staff berhasil dihapus.');
     }
+
+    // --- MONITORING WARGA ---
+    public function warga()
+    {
+        // Ambil data warga, urutkan terbaru
+        $wargas = User::where('role', 'warga')->latest()->paginate(10);
+
+        return view('lurah.warga', compact('wargas'));
+    }
 }

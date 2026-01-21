@@ -17,22 +17,28 @@
         <div class="container mx-auto px-4 h-16 flex justify-between items-center">
             <div class="flex items-center gap-3">
                 <div class="flex items-center gap-2">
-                    <div class="w-8 h-8 bg-blue-600 rounded-lg flex items-center justify-center text-white shadow-sm">
-                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path></svg>
-                    </div>
+                    <img src="{{ asset('storage/images/Jaya Raya.png') }}" alt="Logo Jaya Raya" class="h-12 w-auto object-contain">
                     <span class="font-bold text-lg tracking-tight text-slate-900">Siaga<span class="text-blue-600">Banjir</span></span>
                 </div>
                 <span class="bg-red-100 text-red-700 text-xs font-bold px-2 py-1 rounded-md border border-red-200">PANEL ADMIN</span>
             </div>
 
+            <div class="hidden md:flex items-center gap-1 bg-slate-100 p-1 rounded-lg">
+                <a href="{{ route('admin.dashboard') }}" class="px-4 py-1.5 rounded-md text-sm font-medium bg-white text-blue-700 shadow-sm transition">
+                    Laporan Masuk
+                </a>
+                <a href="{{ route('admin.warga.index') }}" class="px-4 py-1.5 rounded-md text-sm font-medium text-slate-600 hover:text-slate-900 transition">
+                    Data Warga
+                </a>
+            </div>
+
             <div class="flex items-center gap-4">
                 <div class="text-right hidden md:block">
                     <div class="text-xs text-slate-500 font-medium">Login sebagai</div>
-                    <a href="{{ route('profile.edit') }}" class="text-sm font-bold text-slate-800 hover:text-blue-600 transition cursor-pointer" title="Edit Profil">
+                    <a href="{{ route('profile.edit') }}" class="text-sm font-bold text-slate-800 hover:text-blue-600 transition cursor-pointer">
                         {{ Auth::user()->name }}
                     </a>
                 </div>
-
                 <div class="h-8 w-px bg-slate-200 mx-2 hidden md:block"></div>
                 <form method="POST" action="{{ route('logout') }}">
                     @csrf

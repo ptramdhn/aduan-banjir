@@ -72,6 +72,10 @@ Route::middleware(['auth', 'role:admin'])->prefix('admin')->group(function () {
 
     // Route Update Status (POST/PATCH)
     Route::patch('/laporan/{id}/update', [AdminController::class, 'updateStatus'])->name('admin.laporan.update');
+
+    // --- MANAJEMEN WARGA ---
+    Route::get('/warga', [AdminController::class, 'warga'])->name('admin.warga.index');
+    Route::delete('/warga/{id}', [AdminController::class, 'destroyWarga'])->name('admin.warga.destroy');
 });
 
 
@@ -79,8 +83,10 @@ Route::middleware(['auth', 'role:admin'])->prefix('admin')->group(function () {
 Route::middleware(['auth', 'role:lurah'])->prefix('lurah')->group(function () {
 
     Route::get('/dashboard', [LurahController::class, 'dashboard'])->name('lurah.dashboard');
-
     Route::get('/rekap', [LurahController::class, 'rekap'])->name('lurah.rekap');
+
+    // --- DATA WARGA ---
+    Route::get('/warga', [LurahController::class, 'warga'])->name('lurah.warga.index');
 
     Route::get('/staff', [LurahController::class, 'staff'])->name('lurah.staff.index');
     Route::post('/staff', [LurahController::class, 'storeStaff'])->name('lurah.staff.store');

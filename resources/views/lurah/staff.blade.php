@@ -16,12 +16,10 @@
     <nav class="bg-white/90 backdrop-blur-md border-b border-slate-200 sticky top-0 z-50">
         <div class="container mx-auto px-4 h-16 flex justify-between items-center">
             <div class="flex items-center gap-3">
-                <a href="{{ route('lurah.dashboard') }}" class="flex items-center gap-2 hover:opacity-80 transition">
-                    <div class="w-8 h-8 bg-indigo-600 rounded-lg flex items-center justify-center text-white shadow-sm">
-                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"></path></svg>
-                    </div>
+                <div class="flex items-center gap-2">
+                    <img src="{{ asset('storage/images/Jaya Raya.png') }}" alt="Logo Jaya Raya" class="h-12 w-auto object-contain">
                     <span class="font-bold text-lg tracking-tight text-slate-900">Siaga<span class="text-indigo-600">Banjir</span></span>
-                </a>
+                </div>
                 <span class="bg-indigo-100 text-indigo-700 text-xs font-bold px-2 py-1 rounded-md border border-indigo-200">RUANG LURAH</span>
             </div>
 
@@ -29,9 +27,12 @@
                 <nav class="hidden md:flex gap-6 text-sm font-medium">
                     <a href="{{ route('lurah.dashboard') }}" class="text-slate-500 hover:text-indigo-600 transition pb-0.5">Dashboard</a>
                     <a href="{{ route('lurah.rekap') }}" class="text-slate-500 hover:text-indigo-600 transition pb-0.5">Rekap Data</a>
+                    <a href="{{ route('lurah.warga.index') }}" class="text-slate-500 hover:text-indigo-600 transition pb-0.5">Data Warga</a>
                     <a href="{{ route('lurah.staff.index') }}" class="text-indigo-600 border-b-2 border-indigo-600 pb-0.5">Staff Admin</a>
                 </nav>
+
                 <div class="h-6 w-px bg-slate-200 hidden md:block"></div>
+
                 <div class="flex items-center gap-4">
                     <div class="text-right hidden md:block">
                         <div class="text-xs text-slate-500 font-medium">Login sebagai</div>

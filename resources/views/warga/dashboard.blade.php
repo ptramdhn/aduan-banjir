@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dashboard Warga - Siaga Banjir</title>
+    <title>Dashboard Warga - SIGAPBAIK</title>
     
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
@@ -20,7 +20,7 @@
             <div class="flex items-center gap-3">
                 <img src="{{ asset('storage/images/Jaya Raya.png') }}" alt="Logo Jaya Raya" class="h-12 w-auto object-contain">
                 
-                <span class="text-xl font-bold tracking-tight text-slate-900">Siaga<span class="text-blue-600">Banjir</span></span>
+                <span class="text-xl font-bold tracking-tight text-slate-900">SIGAP<span class="text-blue-600">BAIK</span></span>
             </div>
             
             <div class="flex items-center gap-3">

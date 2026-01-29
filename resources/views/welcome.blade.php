@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Siaga Banjir - Pelaporan Cepat & Akurat</title>
+    <title>SIGAPBAIK - Pelaporan Cepat & Akurat</title>
     
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
@@ -29,7 +29,7 @@
                 {{-- Pastikan file 'logo-jaya-raya.png' ada di folder public/images --}}
                 <img src="{{ asset('storage/images/Jaya Raya.png') }}" alt="Logo Jaya Raya" class="h-12 w-auto object-contain">
                 
-                <span class="text-xl font-bold tracking-tight text-slate-900">Siaga<span class="text-blue-600">Banjir</span></span>
+                <span class="text-xl font-bold tracking-tight text-slate-900">SIGAP<span class="text-blue-600">BAIK</span></span>
             </div>
 
             <div class="hidden md:flex items-center gap-8">
@@ -222,7 +222,7 @@
                         </span>
                     </summary>
                     <div class="p-5 pt-0 text-slate-600 text-sm leading-relaxed border-t border-transparent group-open:border-slate-100">
-                        Tidak. Layanan SiagaBanjir sepenuhnya <strong>gratis</strong> untuk seluruh warga kelurahan.
+                        Tidak. Layanan SIGAPBAIK sepenuhnya <strong>gratis</strong> untuk seluruh warga kelurahan.
                     </div>
                 </details>
 
@@ -260,7 +260,7 @@
             <div class="flex items-center justify-center gap-3 mb-6">
                 <img src="{{ asset('storage/images/Jaya Raya.png') }}" alt="Logo Jaya Raya" class="h-10 w-auto object-contain"> 
                 
-                <span class="text-xl font-bold text-white tracking-tight">Siaga<span class="text-blue-500">Banjir</span></span>
+                <span class="text-xl font-bold text-white tracking-tight">SIGAP<span class="text-blue-500">BAIK</span></span>
             </div>
 
             {{-- Copyright --}}

@@ -18,7 +18,7 @@
             <div class="flex items-center gap-3">
                 <div class="flex items-center gap-2">
                     <img src="{{ asset('storage/images/Jaya Raya.png') }}" alt="Logo Jaya Raya" class="h-12 w-auto object-contain">
-                    <span class="font-bold text-lg tracking-tight text-slate-900">Siaga<span class="text-indigo-600">Banjir</span></span>
+                    <span class="font-bold text-lg tracking-tight text-slate-900">SIGAP<span class="text-indigo-600">BAIK</span></span>
                 </div>
                 <span class="bg-indigo-100 text-indigo-700 text-xs font-bold px-2 py-1 rounded-md border border-indigo-200">RUANG LURAH</span>
             </div>
